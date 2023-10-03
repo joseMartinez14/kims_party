@@ -18,13 +18,13 @@ const datalist = [
         answer: '',
     },
     {
-        condition: 'Como se llama la mamá de kim',
+        condition: 'Como se llama la mamá de kim?',
         action: 'Si contesta correctamente reparte 4 tragos sino se los toma',
         type: 'Question',
         answer: 'Marcela',
     },
     {
-        condition: 'Como se llama el papá de kim',
+        condition: 'Como se llama el papá de kim?',
         action: 'Si contesta correctamente reparte 4 tragos sino se los toma',
         type: 'Question',
         answer: 'Christian',
