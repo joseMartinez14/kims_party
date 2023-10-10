@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography, Button, Paper } from '@mui/material';
 import { COLORS } from '../../utils/Colors';
 import { TEXTS } from '../../utils/Texts';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
@@ -19,13 +19,13 @@ const HomeComponent = () => {
             <Box px={4} >
                 <Typography gutterBottom sx={{
                     color: COLORS.homeSubtitle,
-                    fontSize: '20px',
+                    fontSize: '35px',
                     fontWeight: '600',
-                    pt: 3,
+                    pt: 8,
                     textAlign: 'center'
                 }}>{TEXTS.game_name}</Typography>
                 <Box display="flex"
-                    alignItems={'center'} justifyContent={'center'} py={3}
+                    alignItems={'center'} justifyContent={'center'} py={5}
                 >
                     <Button variant="contained" onClick={handleStart}>Empezar<SportsBarIcon /></Button>
                 </Box>

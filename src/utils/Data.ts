@@ -1,12 +1,12 @@
 
-export const getRandomItem = () => {
+const getRandomItem = () => {
     const randomIndex = Math.floor(Math.random() * datalist.length);
     return datalist[randomIndex];
 }
 
-const datalist = [
+export const datalist = [
     {
-        condition: '(Grupal) Los que tengan mas tiempo de conocer a Kim',
+        condition: 'Los que tengan mas tiempo de conocer a Kim',
         action: 'Toman 2 tragos',
         type: 'Random',
         answer: '',
