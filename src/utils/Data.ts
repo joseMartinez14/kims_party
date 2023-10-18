@@ -1,9 +1,3 @@
-
-const getRandomItem = () => {
-    const randomIndex = Math.floor(Math.random() * datalist.length);
-    return datalist[randomIndex];
-}
-
 export const photolist = [
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/IMG_027BFD841FCA-1.jpeg",
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/IMG_D6037D2E43F7-1.jpeg",
@@ -15,17 +9,25 @@ export const photolist = [
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/9F26F02B-74A7-43BD-943D-F1F5387AEFEE.JPG", //Con david
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/C804737A-BB02-4019-8C40-6AD58453D67C.JPG", //Kim sola copn bloqueador
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-14+at+12.09.21.jpeg", //Kim señal de bro
-    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-14+at+12.50.59+(2).jpeg", //Kim y lily bien tostadas
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-14+at+12.50.59+(1).jpeg", //Samy bien linda
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-14+at+12.50.59+(1).jpeg", //Kim y yo 
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-14+at+12.50.59+(3).jpeg", // Kim en la playa bien sexy
     "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-14+at+12.50.59.jpeg", // Con las amigas en el concierto de bad bunny
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-16+at+17.02.37.jpeg", // Kim full bebe 
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-16+at+17.02.18.jpeg", //Kim foto del kinder
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-16+at+16.59.38.jpeg", //Kim sacando la lengua
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/WhatsApp+Image+2023-10-16+at+17.00.47.jpeg",// Kim vestida de princesa
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/IMG_1846.jpeg", // 15 años con Paula
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/IMG_1845.jpeg", // Boda de jordan con el y meli
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/IMG_1844.jpeg", //Marlon fabi y yo
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/IMG_1830.jpeg", //Retana, cata, fabian
+    "https://special-cards-s3-bucket.s3.us-east-2.amazonaws.com/messageImages/IMG_1847.jpeg", //Chamaca en la playa
 ]
 
 
 export const datalist = [
     {
-        condition: 'Los que tengan más tiempo de conocer a Kim',
+        condition: '(Grupal) Los que tengan más tiempo de conocer a Kim',
         action: 'Toman 2 tragos',
         type: 'Random',
         answer: '',
@@ -41,6 +43,18 @@ export const datalist = [
         action: 'Si contesta correctamente reparte 4 tragos si no se los toma',
         type: 'Question',
         answer: 'Marcela',
+    },
+    {
+        condition: '(Pregunta individual / Sobre Kim) En que temporada fue kim a Work and Travel?',
+        action: 'Si contesta correctamente reparte 3 tragos si no se los toma',
+        type: 'Question',
+        answer: '2019/2020',
+    },
+    {
+        condition: '(Pregunta individual / Sobre Kim) Como se llama la perrita de kim',
+        action: 'Si contesta correctamente reparte 3 tragos si no se los toma',
+        type: 'Question',
+        answer: 'Samy',
     },
     {
         condition: '(Pregunta individual / Sobre Kim) En que U estudia Kim?',
@@ -99,6 +113,12 @@ export const datalist = [
     {
         condition: '(Reto) Fondéese lo que está tomando',
         action: 'Si lo hace reparte 2 shots si no se toma 1',
+        type: '',
+        answer: '',
+    },
+    {
+        condition: '(Reto) Enseñe la galeria de fotos de su telefono en la parte de escondidos',
+        action: 'Si lo hace reparte 1 shot si no se toma 1',
         type: '',
         answer: '',
     },
@@ -169,10 +189,28 @@ export const datalist = [
         answer: '1492',
     },
     {
-        condition: '(Pregunta individual / cultura general) ',
+        condition: '(Pregunta individual / cultura general) ¿Quién ha protagonizado la saga de Indiana Jones?',
         action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
         type: 'Question',
-        answer: '',
+        answer: 'Harrison Ford.',
+    },
+    {
+        condition: '(Pregunta individual / cultura general) ¿En qué año murió Freddie Mercury?',
+        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+        type: 'Question',
+        answer: '1991',
+    },
+    {
+        condition: '(Pregunta individual / cultura general) ¿Cuándo empezó la Primera Guerra Mundial?',
+        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+        type: 'Question',
+        answer: 'En 1914',
+    },
+    {
+        condition: '(Pregunta individual / cultura general) "Ser o no ser, esa es la cuestión". ¿De qué libro es esta cita?',
+        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+        type: 'Question',
+        answer: 'Hamlet de William Shakespeare',
     },
     {
         condition: '(Pregunta individual / cultura general) ¿Quién es el padre del psicoanálisis?',
@@ -203,6 +241,12 @@ export const datalist = [
         action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
         type: 'Question',
         answer: 'Washington D.C.',
+    },
+    {
+        condition: '(Reto) Propóngale matrimonio a la persona de la derecha, lo más convincente posible',
+        action: 'Los demás deciden, si fue convincente reparte 5 tragos si no se toma 3',
+        type: '',
+        answer: '',
     },
 
 ]

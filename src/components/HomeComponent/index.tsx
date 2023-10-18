@@ -2,6 +2,7 @@ import { Box, Typography, Button, Paper } from '@mui/material';
 import { COLORS } from '../../utils/Colors';
 import { TEXTS } from '../../utils/Texts';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
+import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -10,6 +11,10 @@ const HomeComponent = () => {
 
     const handleStart = () => {
         navigate('/play')
+    }
+
+    const handlePhotos = () => {
+        navigate('/photos')
     }
 
     return (
@@ -41,6 +46,7 @@ const HomeComponent = () => {
                     fontWeight: '600',
                     pt: 3,
                 }}>{TEXTS.game_disclosure}</Typography>
+                <Button sx={{ mt: 3 }} variant="contained" onClick={handlePhotos}>Solo ver fotos<PhotoCameraIcon /></Button>
             </Box>
         </Box >
     )
