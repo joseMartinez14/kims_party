@@ -18,7 +18,11 @@ const Players = (props: PlayersProps) => {
 
     const addTodo = () => {
         if (newTodo.trim() !== '') {
-            setPlayers([...players, newTodo]);
+            if (players == undefined) {
+                setPlayers([newTodo]);
+            } else {
+                setPlayers([...players, newTodo]);
+            }
             setNewTodo('');
         }
     };

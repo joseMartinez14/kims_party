@@ -15,7 +15,13 @@ const AppRouter = () => {
 
     const storevalue = useMemo(() => {
         const storedStringArray = localStorage.getItem(storage_key);
-        if (storedStringArray) {
+        console.log("sañkjnabfjoa sf")
+        console.log(storedStringArray)
+        if (storedStringArray == 'undefined') {
+            console.log("Putaaaaaa")
+            localStorage.setItem(storage_key, "[]");
+        }
+        if (storedStringArray && storedStringArray !== undefined) {
             // Parse the JSON string back to an array
             var string_array = JSON.parse(storedStringArray)
             return string_array
