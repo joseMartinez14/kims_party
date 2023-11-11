@@ -82,7 +82,7 @@ const GeneralGameGame = (props: GeneralGameProps) => {
             alignItems={'center'} justifyContent={'center'}
         >{(data.length > 0) ? (
             <Box px={4} >
-                <Typography gutterBottom sx={{
+                {players !== undefined && <Typography gutterBottom sx={{
                     color: COLORS.pruebas,
                     fontSize: '22px',
                     fontWeight: '550',
@@ -90,7 +90,7 @@ const GeneralGameGame = (props: GeneralGameProps) => {
                     textAlign: 'center',
                 }}>
                     {"Turno de: " + players[playerIndex]}
-                </Typography>
+                </Typography>}
                 <Typography gutterBottom sx={{
                     color: COLORS.pruebas,
                     fontSize: '26px',

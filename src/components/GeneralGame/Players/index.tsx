@@ -31,12 +31,12 @@ const Players = (props: PlayersProps) => {
     return (
         <div>
             <TextField
-                label="Inserte nombre del borrach@"
+                label="Inserte nombre de l@s borrach@s"
                 variant="standard"
                 value={newTodo}
                 onChange={(e) => setNewTodo(e.target.value)}
                 sx={{
-                    width: '85%'
+                    width: '100%'
                 }}
             />
             <Box pt={1} width={'100%'}>
@@ -45,7 +45,7 @@ const Players = (props: PlayersProps) => {
                 </Button>
             </Box>
             <List>
-                {players.map((player, index) => (
+                {players?.map((player, index) => (
                     <ListItem key={index}>
                         <ListItemText primary={player} />
                         <ListItemSecondaryAction>

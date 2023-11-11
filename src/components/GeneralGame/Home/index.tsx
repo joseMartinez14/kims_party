@@ -48,6 +48,10 @@ const GeneralGameHome = (props: PlayersProps) => {
                     pt: 2,
                 }}> {TEXTS.general_game_description} </Typography>
 
+                <Box width={'100%'} pt={1}
+                >
+                    <Players players={players} setPlayers={setPlayers} />
+                </Box>
                 <Box display="flex"
                     alignItems={'center'} justifyContent={'center'} py={3}
                 >
@@ -59,7 +63,7 @@ const GeneralGameHome = (props: PlayersProps) => {
                     fontWeight: '600',
                     pt: 2,
                 }}>{TEXTS.game_disclosure}</Typography>
-                <Players players={players} setPlayers={setPlayers} />
+
             </Box>
 
         </Box >
