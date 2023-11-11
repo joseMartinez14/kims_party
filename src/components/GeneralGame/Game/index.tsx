@@ -1,9 +1,9 @@
 import { Box, Typography, Button, Paper } from '@mui/material';
-import { COLORS } from '../../utils/Colors';
-import { TEXTS } from '../../utils/Texts';
+import { COLORS } from '../../../utils/Colors';
+import { TEXTS } from '../../../utils/Texts';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import { useState } from 'react';
-import { datalist, photolist } from '../../utils/Data';
+import { datalist } from '../../../utils/DataGeneral';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import DisplayQuestion from './DisplayQuestion';
@@ -19,15 +19,28 @@ interface GameItem {
     answer: string;
 }
 
+interface GeneralGameProps {
+    players: string[];
+}
 
-const Game = () => {
+
+const GeneralGameGame = (props: GeneralGameProps) => {
+    const { players } = props;
+    const [playerIndex, setPlayerIndex] = useState<number>(0);
     const [data, setData] = useState<GameItem[]>(datalist);
-    const [photos, setPhotos] = useState<string[]>(photolist);
 
     const getRandomItem = () => {
         const randomIndex = Math.floor(Math.random() * data.length);
         return data[randomIndex];
     }
+
+    const changePLayer = () => {
+        setPlayerIndex((playerIndex + 1))
+        if ((playerIndex + 1) >= players.length) {
+            setPlayerIndex(0)
+        }
+    }
+
 
     const getRandomItemDelete = () => {
         const data_temp = [...data];
@@ -38,19 +51,7 @@ const Game = () => {
         return temp_ob;
     }
 
-    const getRandomPhotoDelete = () => {
-        console.log(photos)
-        const data_temp = [...photos];
-        const randomIndex = Math.floor(Math.random() * data_temp.length);
-        var temp_ob = data_temp[randomIndex];
-        data_temp.splice(randomIndex, 1);
-        setPhotos(data_temp);
-        return temp_ob;
-    }
-
-
     const [item, setItem] = useState<GameItem>(getRandomItem);
-    const [photoItem, setPhotoItem] = useState<string>(getRandomPhotoDelete);
     const [showAnswer, setShowAnswer] = useState<boolean>(false);
     const [answerError, setAnswerError] = useState<boolean>(false);
     const navigate = useNavigate();
@@ -65,19 +66,15 @@ const Game = () => {
         if (item.type == 'Question' && showAnswer == false) {
             setAnswerError(true);
         } else {
-
             setItem(getRandomItemDelete());
-            setPhotoItem(getRandomPhotoDelete());
             setShowAnswer(false);
             setAnswerError(false);
-            if (photos.length <= 1) {
-                setPhotos(photolist)
-            }
+            changePLayer();
         }
     }
 
     const handleExit = () => {
-        navigate('/kims_party')
+        navigate('/')
     }
 
     return (
@@ -87,9 +84,18 @@ const Game = () => {
             <Box px={4} >
                 <Typography gutterBottom sx={{
                     color: COLORS.pruebas,
+                    fontSize: '22px',
+                    fontWeight: '550',
+                    pt: 7,
+                    textAlign: 'center',
+                }}>
+                    {"Turno de: " + players[playerIndex]}
+                </Typography>
+                <Typography gutterBottom sx={{
+                    color: COLORS.pruebas,
                     fontSize: '26px',
                     fontWeight: '600',
-                    pt: 7,
+                    pt: 0,
                     textAlign: 'center',
                 }}>
                     {item.condition}
@@ -113,26 +119,6 @@ const Game = () => {
                     <Button variant="contained" onClick={handleExit} sx={{ backgroundColor: COLORS.warningMain }}> Salir <ExitToAppIcon /></Button>
                 </Box>
 
-                <Box display="flex"
-                    alignItems={'center'} justifyContent={'space-evenly'} pt={2}
-                >
-                    <img src={photoItem} style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
-                    }} />
-                </Box>
-                <Typography gutterBottom sx={{
-                    color: COLORS.black,
-                    fontSize: '12px',
-                    fontWeight: '400',
-                    textAlign: 'center',
-                    pt: 2,
-                    pb: 7
-                }}>
-                    *Imagenes ilustrativas. No tienen nada que ver con el juego
-                </Typography>
-
             </Box>
         ) :
             (
@@ -142,4 +128,4 @@ const Game = () => {
     )
 }
 
-export default Game;
+export default GeneralGameGame;

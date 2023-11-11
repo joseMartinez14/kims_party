@@ -18,4 +18,5 @@ export const COLORS = {
     barbiePink: '#FE1792',
     homeSubtitle: '#BD83FE',
     pruebas: '#050B40',
+    darkblue: '#242582',
 };

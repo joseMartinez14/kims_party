@@ -36,7 +36,7 @@ const OnlyPhotos = () => {
     }
 
     const handleExit = () => {
-        navigate('/')
+        navigate('/kims_party')
     }
 
     return (

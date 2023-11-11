@@ -10,11 +10,11 @@ const HomeComponent = () => {
     const navigate = useNavigate();
 
     const handleStart = () => {
-        navigate('/play')
+        navigate('/kims_party/play')
     }
 
     const handlePhotos = () => {
-        navigate('/photos')
+        navigate('/kims_party/photos')
     }
 
     return (
