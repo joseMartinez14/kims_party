@@ -15,10 +15,7 @@ const AppRouter = () => {
 
     const storevalue = useMemo(() => {
         const storedStringArray = localStorage.getItem(storage_key);
-        console.log("sañkjnabfjoa sf")
-        console.log(storedStringArray)
         if (storedStringArray == 'undefined') {
-            console.log("Putaaaaaa")
             localStorage.setItem(storage_key, "[]");
         }
         if (storedStringArray && storedStringArray !== undefined) {
@@ -29,9 +26,14 @@ const AppRouter = () => {
     }, []);
 
     const [players, setPlayers] = useState<string[]>(storevalue);
+    const [poolSelected, setPoolSelected] = useState<number>(0);
 
     const handleNewPlayers = (newPlayers: string[]) => {
         setPlayers(newPlayers)
+    }
+
+    const handlePoolChange = (newPool: number) => {
+        setPoolSelected(newPool)
     }
 
     return (
@@ -43,8 +45,8 @@ const AppRouter = () => {
                     <Route element={<OnlyPhotos />} path="/kims_party/photos" />
                 </Route>
                 <Route element={<MainLayout />}>
-                    < Route element={<GeneralGameHome players={players} setPlayers={handleNewPlayers} />} path="/" />
-                    <Route element={<GeneralGameGame players={players} />} path="/play" />
+                    < Route element={<GeneralGameHome players={players} setPlayers={handleNewPlayers} poolSelected={poolSelected} setPoolSelected={handlePoolChange} />} path="/" />
+                    <Route element={<GeneralGameGame players={players} pool={poolSelected} />} path="/play" />
                 </Route>
             </Routes>
         </Router >

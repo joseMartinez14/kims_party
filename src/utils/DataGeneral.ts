@@ -90,72 +90,6 @@ export const datalist = [
         answer: '',
     },
     {
-        condition: '(Pregunta individual / cultura general) ¿Quién escribió La Odisea?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Homero',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Quién pintó “la última cena”?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Leonardo da Vinci',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Qué año llegó Cristóbal Colón a América?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: '1492',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Quién ha protagonizado la saga de Indiana Jones?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Harrison Ford.',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿En qué año murió Freddie Mercury?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: '1991',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Cuándo empezó la Primera Guerra Mundial?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'En 1914',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Quién es el padre del psicoanálisis?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Sigmund Freud',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Cuál es el disco más vendido de la historia?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Thriller, de Michael Jackson. (Viva el hehe)',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿En qué lugar del cuerpo se produce la insulina?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'En el páncreas es donde se produce la insulina.',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Con qué se fabricaba el pergamino?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'El pergamino se fabrica con los piel de animales',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Dónde está la Casa Blanca?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Washington D.C.',
-    },
-    {
         condition: '(Reto) Propóngale matrimonio a la persona de la derecha, lo más convincente posible',
         action: 'Los demás deciden, si fue convincente reparte 5 tragos si no se toma 3',
         type: '',
@@ -202,38 +136,229 @@ export const datalist = [
         action: 'Si lo cumple o response reparte 4 tragos si no se toma 6',
         type: '',
         answer: '',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) Que presidente de la República que abolió la pena de muerte?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Tomás Guardia',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) Cual fue el primer presidente de la República de Costa Rica?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'José M Castro Madriz',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Cuál es el país más pequeño del mundo?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Vaticano',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Cuántos océanos hay en la Tierra?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: '5',
-    },
-    {
-        condition: '(Pregunta individual / cultura general) ¿Cuál es el río más largo del mundo?',
-        action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
-        type: 'Question',
-        answer: 'Nilo',
-    },
-    
-
+    }
 ]
 
+
+export const questions = [
+    [
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién escribió La Odisea?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Homero',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién pintó “la última cena”?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Leonardo da Vinci',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué año llegó Cristóbal Colón a América?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: '1492',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién ha protagonizado la saga de Indiana Jones?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Harrison Ford.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué año murió Freddie Mercury?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: '1991',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuándo empezó la Primera Guerra Mundial?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'En 1914',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién es el padre del psicoanálisis?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Sigmund Freud',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el disco más vendido de la historia?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Thriller, de Michael Jackson. (Viva el hehe)',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué lugar del cuerpo se produce la insulina?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'En el páncreas es donde se produce la insulina.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Con qué se fabricaba el pergamino?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'El pergamino se fabrica con los piel de animales',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Dónde está la Casa Blanca?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Washington D.C.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) Que presidente de la República que abolió la pena de muerte?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Tomás Guardia',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) Cual fue el primer presidente de la República de Costa Rica?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'José M Castro Madriz',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el país más pequeño del mundo?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Vaticano',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuántos océanos hay en la Tierra?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: '5',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el río más largo del mundo?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Nilo',
+        }
+    ],
+    [
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué año se aprobó la actual Constitución española?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'En 1978',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál fue el primer presidente democrático de España tras la dictadura franquista?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Adolfo Suárez',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué día es la fiesta nacional de Estados Unidos?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'El 4 de julio',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién inventó la bombilla?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Thomas Edison',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué año se produjo la Revolución Francesa?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'En 1789',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Dónde se encuentra la Sagrada Familia?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'En Barcelona',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el océano más grande del mundo?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'El océano Pacífico',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el país más grande del mundo?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Rusia, con 17.075.200 km² de superficie',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es la ciudad de los rascacielos?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Nueva York',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué país del mundo produce más vino?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Italia',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuántos huesos hay en el cuerpo humano?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Un adulto tiene 206 huesos',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cómo se llama el proceso por el cual las plantas se alimentan?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Fotosíntesis',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuánto vale el número pi con 4 decimales?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: '3.1416',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué elemento de la tabla periódica tiene como símbolo He?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Helio',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué planeta es el que se encuentra más cercano al Sol?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Mercurio',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién dirigió "Origen" (Inception)?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Christopher Nolan',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Por qué película ganó Leonardo DiCaprio su primer Óscar?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'El Renacido',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es la película con más Óscars de la historia?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: "Titanic', 'Ben-Hur' y el 'Señor de los anillos: El retorno del rey' (11 estatuillas).",
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál fue la primera película de Disney?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: "'Blancanieves y los siete enanitos' (1937)",
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es la película más taquillera de la historia?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question2',
+            answer: 'Avatar',
+        },
+    ]
+]

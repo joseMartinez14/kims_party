@@ -5,6 +5,7 @@ export const COLORS = {
     info: 'rgb(2, 136, 209)',
     white: '#FFFFFF',
     black: '#000000',
+    black2: '#333535',
     primary: '#5364FA',
     secondary: '#324046',
     neutral500: '#6B8995',

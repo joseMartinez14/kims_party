@@ -1,8 +1,11 @@
-import { Box, Typography, Button, Paper } from '@mui/material';
+import { Box, Typography, Button, Paper, MenuItem } from '@mui/material';
 import { COLORS } from '../../../utils/Colors';
+import { questions } from '../../../utils/DataGeneral';
 import { TEXTS } from '../../../utils/Texts';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+
 
 import { useNavigate } from 'react-router-dom';
 import Players from '../Players';
@@ -11,15 +14,31 @@ import { useState, useEffect, useMemo } from 'react';
 interface PlayersProps {
     players: string[];
     setPlayers: (newPlayers: string[]) => void;
+    poolSelected: number;
+    setPoolSelected: (newPool: number) => void;
 }
 const storage_key = "QUE_PARIO_MAMA_JUGADORES"
 const GeneralGameHome = (props: PlayersProps) => {
 
-    const { players, setPlayers } = props;
+    const { players, setPlayers, poolSelected, setPoolSelected } = props;
+    const [questionsTypes, setQuestionsTypes] = useState<number>(questions.length);
 
     const navigate = useNavigate();
     const handleStart = () => {
         navigate('/play')
+    }
+
+    const getPools = () => {
+        const content = [];
+        for (let i = 0; i < questionsTypes; i++) {
+            content.push(<MenuItem value={i}> Paquete de preguntas #{i + 1}</MenuItem>);
+        }
+        return content;
+    }
+
+    const handlePoolChange = (event: SelectChangeEvent) => {
+        console.log(poolSelected)
+        setPoolSelected(parseInt(event.target.value));
     }
 
 
@@ -47,6 +66,26 @@ const GeneralGameHome = (props: PlayersProps) => {
                     fontWeight: '600',
                     pt: 2,
                 }}> {TEXTS.general_game_description} </Typography>
+
+                <Typography gutterBottom sx={{
+                    color: COLORS.black2,
+                    fontSize: '13px',
+                    fontWeight: '600',
+                    pt: 2,
+                }}> {TEXTS.question_pool_disclamer} </Typography>
+
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={String(poolSelected)}
+                    label="Age"
+                    onChange={handlePoolChange}
+                    sx={{
+                        fontSize: '13px'
+                    }}
+                >
+                    {getPools()}
+                </Select>
 
                 <Box width={'100%'} pt={1}
                 >

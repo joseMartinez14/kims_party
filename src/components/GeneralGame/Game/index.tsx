@@ -4,6 +4,7 @@ import { TEXTS } from '../../../utils/Texts';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import { useState } from 'react';
 import { datalist } from '../../../utils/DataGeneral';
+import { questions } from '../../../utils/DataGeneral';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import DisplayQuestion from './DisplayQuestion';
@@ -21,13 +22,14 @@ interface GameItem {
 
 interface GeneralGameProps {
     players: string[];
+    pool: number;
 }
 
 
 const GeneralGameGame = (props: GeneralGameProps) => {
-    const { players } = props;
+    const { players, pool } = props;
     const [playerIndex, setPlayerIndex] = useState<number>(0);
-    const [data, setData] = useState<GameItem[]>(datalist);
+    const [data, setData] = useState<GameItem[]>([...datalist, ...questions[pool]]);
 
     const getRandomItem = () => {
         const randomIndex = Math.floor(Math.random() * data.length);
@@ -63,7 +65,7 @@ const GeneralGameGame = (props: GeneralGameProps) => {
     }
 
     const handleNext = () => {
-        if (item.type == 'Question' && showAnswer == false) {
+        if (item.type.match(/Question.*/) && showAnswer == false) {
             setAnswerError(true);
         } else {
             setItem(getRandomItemDelete());
@@ -109,7 +111,7 @@ const GeneralGameGame = (props: GeneralGameProps) => {
                 }}>{item.action}</Typography>
 
                 {
-                    (item.type == 'Question') && <DisplayQuestion answer={item.answer} showError={answerError} showAnswer={showAnswer} handleShowAnswer={handleShowAnswer} />
+                    (item.type.match(/Question.*/)) && <DisplayQuestion answer={item.answer} showError={answerError} showAnswer={showAnswer} handleShowAnswer={handleShowAnswer} />
                 }
 
                 <Box display="flex"
