@@ -5,24 +5,28 @@ export const datalist = [
         type: '',
         answer: '',
     },
+    /*
     {
         condition: '(Reto) Deje la persona de la derecha le de una nalgada fuerte',
         action: 'Si acepta reparte 6 tragos si no se toma 5',
         type: '',
         answer: '',
     },
+     */
     {
         condition: '(Reto) Fondéese lo que está tomando',
         action: 'Si lo hace reparte 2 shots si no se toma 1',
         type: '',
         answer: '',
     },
+    /*
     {
         condition: '(Reto) Enseñe la galeria de fotos de su telefono en la parte de escondidos',
         action: 'Si lo hace reparte 1 shot si no se toma 1',
         type: '',
         answer: '',
     },
+    
     {
         condition: '(Grupal) El/La que mando nudes más recientemente',
         action: 'Reparte 5 tragos',
@@ -35,6 +39,7 @@ export const datalist = [
         type: '',
         answer: '',
     },
+     */
     {
         condition: '(Grupal) Los claretianos',
         action: 'Toman 1 shot',
@@ -71,30 +76,35 @@ export const datalist = [
         type: '',
         answer: '',
     },
+    /*
     {
         condition: '(Grupal) Los que andan ropa interior roja',
         action: 'Reparten 3 tragos',
         type: '',
         answer: '',
     },
+     */
     {
         condition: 'El/La que esté más mamad@',
         action: 'Toma 5 tragos',
         type: '',
         answer: '',
     },
+    /*
     {
         condition: '(Juego) Cultura chupistica de posiciones sexuales',
         action: 'EL/La que pierde toma 5 tragos',
         type: '',
         answer: '',
     },
+     */
     {
         condition: '(Reto) Propóngale matrimonio a la persona de la derecha, lo más convincente posible',
         action: 'Los demás deciden, si fue convincente reparte 5 tragos si no se toma 3',
         type: '',
         answer: '',
     },
+    /*
     {
         condition: '(Reto) Gire una botella como "Botellita" y al o la que caiga le da un beso en el cuello',
         action: 'Si lo hace reparte 2 shot si no se toma 1',
@@ -107,6 +117,7 @@ export const datalist = [
         type: '',
         answer: '',
     },
+     */
     {
         condition: '(Reto) Carta de suerte, tomese un trago de agua',
         action: 'No queremos vomitadas',
@@ -125,6 +136,7 @@ export const datalist = [
         type: '',
         answer: '',
     },
+    /*
     {
         condition: 'Verdad o reto',
         action: 'Si lo cumple o response reparte 4 tragos si no se toma 6',
@@ -137,6 +149,7 @@ export const datalist = [
         type: '',
         answer: '',
     }
+     */
 ]
 
 
@@ -147,6 +160,48 @@ export const questions = [
             action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
             type: 'Question1',
             answer: 'Homero',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué año cayó el muro de Berlín?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'En 1989',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Hace cuánto se extinguieron los dinosaurios?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Hace 66 millones de años',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué presidente de Estados Unidos fue asesinado en Dallas?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'John F. Kennedy',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿A cuántos kilómetros equivale una milla?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: '1.6 km',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué es más grande un átomo o una célula?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Una célula',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el animal más grande de la Tierra?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'La ballena azul',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuántas películas de "Harry Potter" se han hecho?',
+            action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
+            type: 'Question1',
+            answer: 'Ocho',
         },
         {
             condition: '(Pregunta individual / cultura general) ¿Quién pintó “la última cena”?',
