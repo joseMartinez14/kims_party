@@ -5,28 +5,26 @@ export const datalist = [
         type: '',
         answer: '',
     },
-    /*
     {
         condition: '(Reto) Deje la persona de la derecha le de una nalgada fuerte',
         action: 'Si acepta reparte 6 tragos si no se toma 5',
         type: '',
         answer: '',
     },
-     */
+     
     {
         condition: '(Reto) Fondéese lo que está tomando',
         action: 'Si lo hace reparte 2 shots si no se toma 1',
         type: '',
         answer: '',
     },
-    /*
+    
     {
         condition: '(Reto) Enseñe la galeria de fotos de su telefono en la parte de escondidos',
         action: 'Si lo hace reparte 1 shot si no se toma 1',
         type: '',
         answer: '',
     },
-    
     {
         condition: '(Grupal) El/La que mando nudes más recientemente',
         action: 'Reparte 5 tragos',
@@ -39,7 +37,7 @@ export const datalist = [
         type: '',
         answer: '',
     },
-     */
+     
     {
         condition: '(Grupal) Los claretianos',
         action: 'Toman 1 shot',
@@ -76,35 +74,31 @@ export const datalist = [
         type: '',
         answer: '',
     },
-    /*
     {
         condition: '(Grupal) Los que andan ropa interior roja',
         action: 'Reparten 3 tragos',
         type: '',
         answer: '',
     },
-     */
+     
     {
         condition: 'El/La que esté más mamad@',
         action: 'Toma 5 tragos',
         type: '',
         answer: '',
     },
-    /*
     {
         condition: '(Juego) Cultura chupistica de posiciones sexuales',
         action: 'EL/La que pierde toma 5 tragos',
         type: '',
         answer: '',
     },
-     */
     {
         condition: '(Reto) Propóngale matrimonio a la persona de la derecha, lo más convincente posible',
         action: 'Los demás deciden, si fue convincente reparte 5 tragos si no se toma 3',
         type: '',
         answer: '',
     },
-    /*
     {
         condition: '(Reto) Gire una botella como "Botellita" y al o la que caiga le da un beso en el cuello',
         action: 'Si lo hace reparte 2 shot si no se toma 1',
@@ -117,7 +111,6 @@ export const datalist = [
         type: '',
         answer: '',
     },
-     */
     {
         condition: '(Reto) Carta de suerte, tomese un trago de agua',
         action: 'No queremos vomitadas',
@@ -136,7 +129,6 @@ export const datalist = [
         type: '',
         answer: '',
     },
-    /*
     {
         condition: 'Verdad o reto',
         action: 'Si lo cumple o response reparte 4 tragos si no se toma 6',
@@ -149,12 +141,18 @@ export const datalist = [
         type: '',
         answer: '',
     }
-     */
+]
+
+export const titles = [
+    "Pack de preguntas y retos #1",
+    "Pack de preguntas y retos #2",
+    "Pack de solo preguntas #1",
 ]
 
 
 export const questions = [
-    [
+    [  
+        ...datalist,
         {
             condition: '(Pregunta individual / cultura general) ¿Quién escribió La Odisea?',
             action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
@@ -295,6 +293,7 @@ export const questions = [
         }
     ],
     [
+        ...datalist,
         {
             condition: '(Pregunta individual / cultura general) ¿En qué año se aprobó la actual Constitución española?',
             action: 'Si responde bien, reparte 4 tragos, si no se toma 4',
@@ -415,5 +414,200 @@ export const questions = [
             type: 'Question2',
             answer: 'Avatar',
         },
+    ],
+    [
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál fue la primera película de terror en color?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'La maldición de Frankenstein',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuántas películas hay de Saw?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Nueve',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién interpretó a Hermione Granger en Harry Potter?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Emma Watson',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué ciudad se ambiente Cazafantasmas?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'En Nueva York',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿A qué saga pertenece el personaje de Katniss Everdeen?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: "A 'Los Juegos del Hambre'",
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cómo se llama la casa de los Weasley en Harry Potter?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'La Madriguera.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿A qué mítica actriz interpreta Ana de Armas en Blonde?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Marilyn Monroe.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cómo se llama la mujer de Shrek?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Fiona.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuántos lados tiene un heptadecágono?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Diecisete.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿De dónde sale el aceite de oliva?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'De las aceitunas.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cómo se llama el satélite más grande de Saturno?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Titán.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el único mamífero capaz de volar?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: ' El murciélago.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuántos corazones tiene un pulpo?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Tres.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cómo se llama el triángulo que tiene sus tres lados iguales?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Equilátero.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el órgano más grande del cuerpo humano?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'La piel.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el animal que más muertes provoca cada año?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'El mosquito.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Dónde se inventó la pizza?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'En Nápoles.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el río más largo de Europa?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'El Volga.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Dónde se encuentra el museo del Louvre?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'En París.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cómo se llama el río más famoso de Egipto?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'El Nilo.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué país se encuentra el rascacielos más alto del mundo?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'En Dubai.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el país más poblado de África?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Nigeria.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿De qué país es originario el café?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'De Etiopía.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué dos países separa el estrecho de Bering?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Rusia y Estados Unidos.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué país nació Adolf Hitler?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Austria.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuánto duró “La Guerra de los Cien Años”?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: '116 años.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién fue el último faraón de Egipto?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Ramsés III.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál fue la primera civilización humana?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'La civilización sumeria.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál fue el genocidio más grande de la historia?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'El Holocausto.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuándo empezó la Revolución Rusa?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'En 1917.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién creó el Partido Comunista?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Lenin.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué famoso líder de Cuba estuvo 49 años en el poder? ',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question3',
+            answer: 'Fidel Castro',
+        },
+        
     ]
 ]

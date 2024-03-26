@@ -1,6 +1,6 @@
 import { Box, Typography, Button, Paper, MenuItem } from '@mui/material';
 import { COLORS } from '../../../utils/Colors';
-import { questions } from '../../../utils/DataGeneral';
+import { titles } from '../../../utils/DataGeneral';
 import { TEXTS } from '../../../utils/Texts';
 import SportsBarIcon from '@mui/icons-material/SportsBar';
 import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
@@ -21,7 +21,7 @@ const storage_key = "QUE_PARIO_MAMA_JUGADORES"
 const GeneralGameHome = (props: PlayersProps) => {
 
     const { players, setPlayers, poolSelected, setPoolSelected } = props;
-    const [questionsTypes, setQuestionsTypes] = useState<number>(questions.length);
+    const [questionsTypes, setQuestionsTypes] = useState<number>(titles.length);
 
     const navigate = useNavigate();
     const handleStart = () => {
@@ -31,7 +31,7 @@ const GeneralGameHome = (props: PlayersProps) => {
     const getPools = () => {
         const content = [];
         for (let i = 0; i < questionsTypes; i++) {
-            content.push(<MenuItem value={i}> Paquete de preguntas #{i + 1}</MenuItem>);
+            content.push(<MenuItem value={i}> {titles[i]}</MenuItem>);
         }
         return content;
     }

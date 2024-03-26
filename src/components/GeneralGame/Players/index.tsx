@@ -2,8 +2,10 @@
 
 // TodoList.tsx
 import React, { useState } from 'react';
-import { Button, TextField, List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Box } from '@mui/material';
+import { Button, TextField, List, ListItem, ListItemText, ListItemSecondaryAction, IconButton, Box, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { COLORS } from '../../../utils/Colors';
+import { TEXTS } from '../../../utils/Texts';
 
 interface PlayersProps {
     players: string[];
@@ -34,6 +36,24 @@ const Players = (props: PlayersProps) => {
 
     return (
         <div>
+            <Typography gutterBottom sx={{
+                color: COLORS.darkblue,
+                fontSize: '25px',
+                fontWeight: '300',
+                pt: 3,
+            }}>Participantes:</Typography>
+            <List>
+                {players?.map((player, index) => (
+                    <ListItem key={index}>
+                        <ListItemText primary={player} />
+                        <ListItemSecondaryAction>
+                            <IconButton edge="end" aria-label="delete" onClick={() => deleteTodo(index)}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemSecondaryAction>
+                    </ListItem>
+                ))}
+            </List>
             <TextField
                 label="Inserte nombre de l@s borrach@s"
                 variant="standard"
@@ -48,18 +68,6 @@ const Players = (props: PlayersProps) => {
                     Agregar participante
                 </Button>
             </Box>
-            <List>
-                {players?.map((player, index) => (
-                    <ListItem key={index}>
-                        <ListItemText primary={player} />
-                        <ListItemSecondaryAction>
-                            <IconButton edge="end" aria-label="delete" onClick={() => deleteTodo(index)}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemSecondaryAction>
-                    </ListItem>
-                ))}
-            </List>
         </div>
     );
 }

@@ -29,7 +29,7 @@ interface GeneralGameProps {
 const GeneralGameGame = (props: GeneralGameProps) => {
     const { players, pool } = props;
     const [playerIndex, setPlayerIndex] = useState<number>(0);
-    const [data, setData] = useState<GameItem[]>([...datalist, ...questions[pool]]);
+    const [data, setData] = useState<GameItem[]>(questions[pool]);
 
     const getRandomItem = () => {
         const randomIndex = Math.floor(Math.random() * data.length);
