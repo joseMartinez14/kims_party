@@ -147,6 +147,7 @@ export const titles = [
     "Pack de preguntas y retos #1",
     "Pack de preguntas y retos #2",
     "Pack de solo preguntas #1",
+    "Pack de solo preguntas #2",
 ]
 
 
@@ -609,5 +610,199 @@ export const questions = [
             answer: 'Fidel Castro',
         },
         
+    ],
+    [
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuándo se fundó la OTAN?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'En 1949',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué año fue asesinado Abraham Lincoln?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'En 1865.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué año se hundió el Titanic?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'En 1912.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál fue el primer metal que el hombre empleó?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'El cobre.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué personaje fue conocido como el rey de Macedonia?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Alejandro Magno.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué continente surgió la Humanidad?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'En África.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué año cayó el Imperio Romano?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'En el año 476.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿A qué país pertenece Groenlandia?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Dinamarca.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es la moneda oficial de Japón?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'El yen.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál era la ciudad más cercana a la central nuclear de Chernóbil?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Prípiat.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Dónde está Transilvania?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'En Rumanía.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el estado más grande Estados Unidos?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Alaska.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es la capital de Nicaragua?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Maragua.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) Nombra un país que no tenga río.',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Ciudad del Vaticano.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Es más grande Canadá o Estados Unidos?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Canadá.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién fue el primer emperador romano?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'César Augusto.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el mineral más duro del planeta? ',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'El diamante.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuál es el animal más rápido del mundo?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: ' El guepardo.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuáles son los cinco tipos de sabores primarios?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Dulce, amargo, ácido, salado y umami.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué órgano del cuerpo consume más energía?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'El cerebro.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuántos dientes tiene un humano adulto?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: '32.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué descubrieron Marie Curie y su esposo Pierre?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'La radioactividad.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué gas liberan las plantas al hacer la fotosíntesis?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Oxígeno.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cuáles son los tres colores primarios?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'El amarillo, el azul y el rojo.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién interpretó a Eduardo Manostijeras?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Johnny Depp.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Quién protagonizó la película Gladiator?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Russell Crowe.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué actor interpreta al personaje de Thor en el Universo Cinematográfico de Marvel?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: ' Chris Hemsworth.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿En qué país nació la actriz Margot Robbie?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Australia.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Cómo se llamaba el lobo de Jon Nieve?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Fantasma.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿Qué familia vive en la ciudad de Springfield?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Los Simpsons.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) ¿De qué serie es popular el personaje de Michael Scofield?',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: ' ‘Prison Break’.',
+        },
+        {
+            condition: '(Pregunta individual / cultura general) Nombra a los personajes principales de ‘Friends’.',
+            action: 'Si responde bien, reparte 1 shot, si no se lo toma',
+            type: 'Question4',
+            answer: 'Ross, Rachel, Joey, Chandler, Monica y Phoebe.',
+        },
     ]
 ]
