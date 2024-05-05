@@ -25,7 +25,7 @@ const GeneralGameHome = (props: PlayersProps) => {
 
     const navigate = useNavigate();
     const handleStart = () => {
-        navigate('/play')
+        navigate('/que_pario_mama_game/play')
     }
 
     const getPools = () => {

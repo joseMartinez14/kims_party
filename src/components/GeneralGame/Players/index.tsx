@@ -41,7 +41,7 @@ const Players = (props: PlayersProps) => {
                 fontSize: '25px',
                 fontWeight: '300',
                 pt: 3,
-            }}>Participantes:</Typography>
+            }}>Players:</Typography>
             <List>
                 {players?.map((player, index) => (
                     <ListItem key={index}>
@@ -55,7 +55,7 @@ const Players = (props: PlayersProps) => {
                 ))}
             </List>
             <TextField
-                label="Inserte nombre de l@s borrach@s"
+                label="Insert the player name"
                 variant="standard"
                 value={newTodo}
                 onChange={(e) => setNewTodo(e.target.value)}
@@ -65,7 +65,7 @@ const Players = (props: PlayersProps) => {
             />
             <Box pt={1} width={'100%'}>
                 <Button variant="outlined" color="primary" onClick={addTodo} sx={{ pt: '10px' }}>
-                    Agregar participante
+                    Add player
                 </Button>
             </Box>
         </div>

@@ -26,7 +26,7 @@ const HomeComponent = () => {
                     color: COLORS.homeSubtitle,
                     fontSize: '35px',
                     fontWeight: '600',
-                    pt: 8,
+                    pt: 6,
                     textAlign: 'center'
                 }}>{TEXTS.game_name}</Typography>
                 <Box display="flex"

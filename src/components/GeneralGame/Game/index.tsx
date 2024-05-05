@@ -76,7 +76,7 @@ const GeneralGameGame = (props: GeneralGameProps) => {
     }
 
     const handleExit = () => {
-        navigate('/')
+        navigate('/que_pario_mama_game')
     }
 
     return (
