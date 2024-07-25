@@ -85,7 +85,7 @@ const GeneralGameGame = (props: GeneralGameProps) => {
 
     return (
         <Box
-            height={'90vh'}
+            height={'90dvh'}
         >
             {(data.length > 0) ? (
                 <Box px={4} height={'100%'}>

@@ -12,9 +12,9 @@ const MulipleGamesHome = () => {
 
     return (
         <Box display="flex"
-            alignItems={'center'} justifyContent={'center'} flexDirection={'column'}
+            alignItems={'center'} justifyContent={'center'} flexDirection={'column'} height={'90dvh'}
         >
-            <Box px={4} >
+            <Box height={'25%'} px={4} >
                 <Typography gutterBottom sx={{
                     color: "#FFFFFF",
                     fontSize: '35px',
@@ -25,7 +25,7 @@ const MulipleGamesHome = () => {
                 </Typography>
             </Box>
 
-            <Box width={'100%'} pt={3} px={3}>
+            <Box width={'100%'} pt={3} px={3} height={'70%'} sx={{ overflowY: 'auto' }}>
                 <div onClick={() => {
                     navigate('/que_pario_mama_game')
                 }}>

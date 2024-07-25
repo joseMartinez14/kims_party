@@ -15,7 +15,7 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', height: '7vh' }}>
+        <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', height: '7dvh' }}>
             <Toolbar>
                 <div onClick={() => { navigate('/'); }}>
                     <HomeIcon sx={{ width: '35px', height: '40px' }} />

@@ -100,7 +100,7 @@ const TruthOrDareGame = (props: TruthOrDareGameProps) => {
     }, []);
 
     return (
-        <Box height={'90vh'}
+        <Box height={'90dvh'}
         >
             <Box height={'15%'} display="flex" alignItems={'center'} justifyContent={'center'}>
                 <Typography gutterBottom sx={{
