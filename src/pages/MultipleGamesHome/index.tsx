@@ -16,7 +16,7 @@ const MulipleGamesHome = () => {
         >
             <Box px={4} >
                 <Typography gutterBottom sx={{
-                    color: COLORS.homeSubtitle,
+                    color: "#FFFFFF",
                     fontSize: '35px',
                     fontWeight: '600',
                     pt: 6,
@@ -29,7 +29,7 @@ const MulipleGamesHome = () => {
                 <div onClick={() => {
                     navigate('/que_pario_mama_game')
                 }}>
-                    <GameCard gameName='Que Pario Mama Game (es)' />
+                    <GameCard gameName='QPM Trivia/Dares (es)' />
                 </div>
                 <div style={{ paddingTop: 15 }} onClick={() => {
                     navigate('/truth-or-dare')

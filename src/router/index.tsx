@@ -16,7 +16,8 @@ import NeverHaveIEverHome from '../pages/NeverHaveIEverHome';
 import NeverHaveIEverGame from '../components/MultipleGames/NeverHaveIEverGame';
 import WhosMostLikelyHome from '../pages/WhosMostLikelyHome';
 import WhosMostLikelyGame from '../components/MultipleGames/WhosMostLikelyGame';
-
+import GenericGameHome from '../pages/GenericGameHome';
+import { TEXTS } from '../utils/Texts';
 
 const storage_key = "QUE_PARIO_MAMA_JUGADORES"
 
@@ -26,6 +27,7 @@ const AppRouter = () => {
         const storedStringArray = localStorage.getItem(storage_key);
         if (storedStringArray == 'undefined') {
             localStorage.setItem(storage_key, "[]");
+            return []
         }
         if (storedStringArray && storedStringArray !== undefined) {
             // Parse the JSON string back to an array
@@ -45,25 +47,46 @@ const AppRouter = () => {
         setPoolSelected(newPool)
     }
 
+    const getRandomPlayer = (excludedString: string) => {
+        if (players.length === 0) {
+            return " "
+        }
+
+        const filteredStrings = players.filter(str => str !== excludedString);
+
+        if (filteredStrings.length === 0) {
+            throw new Error("All strings were excluded");
+        }
+
+        const randomIndex = Math.floor(Math.random() * filteredStrings.length);
+        return filteredStrings[randomIndex];
+    }
+
     return (
         <Router>
             <Routes>
-                <Route element={<KimLayout />}>
+                {/*<Route element={<KimLayout />}>
                     < Route element={<Home />} path="/kims_party" />
                     <Route element={<Game />} path="/kims_party/play" />
                     <Route element={<OnlyPhotos />} path="/kims_party/photos" />
-                </Route>
+    </Route>*/}
                 <Route element={<MainLayout />}>
-                    < Route element={<GeneralGameHome players={players} setPlayers={handleNewPlayers} poolSelected={poolSelected} setPoolSelected={handlePoolChange} />} path="/que_pario_mama_game" />
+
+                    <Route element={<GenericGameHome players={players} setPlayers={handleNewPlayers} playPath='/que_pario_mama_game/play' poolSelected={poolSelected} setPoolSelected={handlePoolChange} title={TEXTS.qpm_home_title} description={TEXTS.qpm_home_description} />} path="/que_pario_mama_game" />
                     <Route element={<GeneralGameGame players={players} pool={poolSelected} />} path="/que_pario_mama_game/play" />
+
                     <Route element={<MulipleGamesHome />} path="/" />
-                    <Route element={<TruthOrDare players={players} setPlayers={handleNewPlayers} />} path="/truth-or-dare" />
+
+                    <Route element={<GenericGameHome players={players} setPlayers={handleNewPlayers} playPath='/truth-or-dare/play' title={TEXTS.tord_home_title} description={TEXTS.tord_home_description} />} path="/truth-or-dare" />
                     <Route element={<TruthOrDareGame players={players} />} path="/truth-or-dare/play" />
-                    <Route element={<WhatYouRatterHome />} path="/wyr" />
-                    <Route element={<WhatYouRatterGame />} path="/wyr/play" />
-                    <Route element={<NeverHaveIEverHome players={players} setPlayers={handleNewPlayers} />} path="/nhie" />
-                    <Route element={<NeverHaveIEverGame players={players} />} path="/nhie/play" />
-                    <Route element={<WhosMostLikelyHome players={players} setPlayers={handleNewPlayers} />} path="/wmlt" />
+
+                    <Route element={<GenericGameHome players={players} setPlayers={handleNewPlayers} playPath='/wyr/play' title={TEXTS.wyr_home_title} description={TEXTS.wyr_home_description} />} path="/wyr" />
+                    <Route element={<WhatYouRatterGame players={players} getRandomPlayer={getRandomPlayer} />} path="/wyr/play" />
+
+                    <Route element={<GenericGameHome players={players} setPlayers={handleNewPlayers} playPath='/nhie/play' title={TEXTS.nhie_home_title} description={TEXTS.nhie_home_desciption} />} path="/nhie" />
+                    <Route element={<NeverHaveIEverGame players={players} getRandomPlayer={getRandomPlayer} />} path="/nhie/play" />
+
+                    <Route element={<GenericGameHome players={players} setPlayers={handleNewPlayers} playPath='/wmlt/play' title={TEXTS.wmlt_home_title} description={TEXTS.wmlt_home_description} />} path="/wmlt" />
                     <Route element={<WhosMostLikelyGame players={players} />} path="/wmlt/play" />
 
                 </Route>

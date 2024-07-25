@@ -55,7 +55,7 @@ const WhosMostLikelyHome = (props: TruthOrDareProps) => {
                     fontSize: '18px',
                     fontWeight: '600',
                     pt: 2,
-                }}> {"Description: Each round the player will have a statment of 'who is most likely to' and you need to choose someone on the group. That person has to drink (You CAN choose yourself)."}</Typography>
+                }}> {"Description: Each round the player will have a statement of 'who is most likely to' and you need to choose someone on the group. That person has to drink (You CAN choose yourself)."}</Typography>
 
                 <Box width={'100%'} pt={1}
                 >

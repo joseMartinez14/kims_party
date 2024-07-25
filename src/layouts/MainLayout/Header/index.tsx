@@ -15,15 +15,11 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: COLORS.darkblue, mb: 2 }}>
+        <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 'none', height: '7vh' }}>
             <Toolbar>
                 <div onClick={() => { navigate('/'); }}>
-                    <HomeIcon />
+                    <HomeIcon sx={{ width: '35px', height: '40px' }} />
                 </div>
-                <Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                    Que pario mamá!!
-                </Typography>
-                <LiquorIcon />
             </Toolbar>
         </AppBar>
     );

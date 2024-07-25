@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import EndGame from './EndGame';
 
 
+
 interface GameItem {
     condition: string;
     action: string;
@@ -30,6 +31,8 @@ const GeneralGameGame = (props: GeneralGameProps) => {
     const { players, pool } = props;
     const [playerIndex, setPlayerIndex] = useState<number>(0);
     const [data, setData] = useState<GameItem[]>(questions[pool]);
+
+    const Swal = require('sweetalert2')
 
     const getRandomItem = () => {
         const randomIndex = Math.floor(Math.random() * data.length);
@@ -55,77 +58,86 @@ const GeneralGameGame = (props: GeneralGameProps) => {
 
     const [item, setItem] = useState<GameItem>(getRandomItem);
     const [showAnswer, setShowAnswer] = useState<boolean>(false);
-    const [answerError, setAnswerError] = useState<boolean>(false);
     const navigate = useNavigate();
 
 
 
     const handleShowAnswer = () => {
+        Swal.fire({
+            text: item.answer,
+            icon: "info"
+        });
         setShowAnswer(true)
     }
 
     const handleNext = () => {
         if (item.type.match(/Question.*/) && showAnswer == false) {
-            setAnswerError(true);
+            Swal.fire({
+                text: "Vea primero la respuesta",
+                icon: "error"
+            });
         } else {
             setItem(getRandomItemDelete());
             setShowAnswer(false);
-            setAnswerError(false);
             changePLayer();
         }
     }
 
-    const handleExit = () => {
-        navigate('/que_pario_mama_game')
-    }
-
     return (
-        <Box display="flex"
-            alignItems={'center'} justifyContent={'center'}
-        >{(data.length > 0) ? (
-            <Box px={4} >
-                {players !== undefined && <Typography gutterBottom sx={{
-                    color: COLORS.pruebas,
-                    fontSize: '22px',
-                    fontWeight: '550',
-                    pt: 7,
-                    textAlign: 'center',
-                }}>
-                    {"Turno de: " + players[playerIndex]}
-                </Typography>}
-                <Typography gutterBottom sx={{
-                    color: COLORS.pruebas,
-                    fontSize: '26px',
-                    fontWeight: '600',
-                    pt: 0,
-                    textAlign: 'center',
-                }}>
-                    {item.condition}
-                </Typography>
-                <Typography gutterBottom sx={{
-                    color: COLORS.neutral500,
-                    fontSize: '22px',
-                    fontWeight: '600',
-                    textAlign: 'center',
-                    pt: 4,
-                }}>{item.action}</Typography>
+        <Box
+            height={'90vh'}
+        >
+            {(data.length > 0) ? (
+                <Box px={4} height={'100%'}>
+                    <Box height={'15%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                        {players !== undefined &&
+                            <Typography gutterBottom sx={{
+                                color: COLORS.allTexts,
+                                fontSize: '30px',
+                                fontWeight: '350',
+                                textAlign: 'center'
+                            }}>{players[playerIndex]}
+                            </Typography>
+                        }
+                    </Box>
+                    <Box height={'40%'} display="flex" alignItems={'center'} justifyContent={'center'} sx={{ overflowY: 'auto' }}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.allTexts,
+                            fontSize: '32px',
+                            fontWeight: '450',
+                            pt: 0,
+                            textAlign: 'center',
+                        }}>
+                            {item.condition}
+                        </Typography>
+                    </Box>
+                    <Box height={'15%'} display="flex" alignItems={'center'} justifyContent={'center'} flexDirection={'column'}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.neutral500,
+                            fontSize: '22px',
+                            fontWeight: '600',
+                            textAlign: 'center',
+                            pt: 4,
+                        }}>{item.action}</Typography>
 
-                {
-                    (item.type.match(/Question.*/)) && <DisplayQuestion answer={item.answer} showError={answerError} showAnswer={showAnswer} handleShowAnswer={handleShowAnswer} />
-                }
+                    </Box>
+                    <Box height={'10%'} display="flex" alignItems={'center'} justifyContent={'center'} flexDirection={'column'}>
 
-                <Box display="flex"
-                    alignItems={'center'} justifyContent={'space-evenly'} pt={7}
-                >
-                    <Button variant="contained" onClick={handleNext}>Siguiente turno<SkipNextIcon /></Button>
-                    <Button variant="contained" onClick={handleExit} sx={{ backgroundColor: COLORS.warningMain }}> Salir <ExitToAppIcon /></Button>
+                        {
+                            (item.type.match(/Question.*/)) &&
+                            <Button variant="contained" sx={{ color: '#000000', backgroundColor: '#FFFFFF', height: '45px', width: '200px' }} onClick={handleShowAnswer}>Respuesta<SkipNextIcon /></Button>
+                        }
+                    </Box>
+
+                    <Box height={'20%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                        <Button variant="contained" sx={{ color: '#000000', backgroundColor: '#FFFFFF', height: '45px', width: '200px' }} onClick={handleNext}>Siguiente turno<SkipNextIcon /></Button>
+                    </Box>
+
                 </Box>
-
-            </Box>
-        ) :
-            (
-                <EndGame />
-            )}
+            ) :
+                (
+                    <EndGame />
+                )}
         </Box >
     )
 }

@@ -55,8 +55,6 @@ const TruthOrDareGame = (props: TruthOrDareGameProps) => {
         try {
             //const result = await axios.get("https://api.truthordarebot.xyz/api/dare?rating=r");
             const result = await axios.get(url);
-            console.log("Terminoo");
-            console.log(result)
 
             if (result.data.question) {
                 console.log("**** ", result.data.question);
@@ -72,8 +70,6 @@ const TruthOrDareGame = (props: TruthOrDareGameProps) => {
 
         }
         catch (error: any) {
-            console.log("Error en api")
-            console.log(error);
             swal({
                 icon: "error",
                 title: "Oops...",
@@ -86,7 +82,6 @@ const TruthOrDareGame = (props: TruthOrDareGameProps) => {
     const play = async (url: string) => {
 
         if (!isBottonAvail) {
-            console.log("No hago ni picha")
             return;
         }
         setisBottonAvail(false);
@@ -105,80 +100,93 @@ const TruthOrDareGame = (props: TruthOrDareGameProps) => {
     }, []);
 
     return (
-        <Box display="flex"
-            alignItems={'center'} justifyContent={'center'} flexDirection={'column'}
+        <Box height={'90vh'}
         >
-            <Box px={4} >
+            <Box height={'15%'} display="flex" alignItems={'center'} justifyContent={'center'}>
                 <Typography gutterBottom sx={{
-                    color: COLORS.homeSubtitle,
-                    fontSize: '35px',
-                    fontWeight: '600',
-                    pt: 6,
+                    color: COLORS.allTexts,
+                    fontSize: '30px',
+                    fontWeight: '350',
                     textAlign: 'center'
                 }}>{players[playerIndex]}
                 </Typography>
             </Box>
 
 
-            <Box px={2} py={3} display={'flex'} flexDirection={'row'}>
-                <Card sx={{ width: '100%', borderRadius: 8, backgroundColor: isBottonAvail ? "" : "#CBCED2", px: 2.5, py: 1, mx: 5 }} raised>
-                    <div onClick={() => { play("https://api.truthordarebot.xyz/api/truth?rating=r") }} >
-                        <Typography gutterBottom sx={{
-                            p: 1,
-                            fontSize: '28px',
-                            fontWeight: '500',
-                            textAlign: 'center'
-                        }}>{'Truth'}
-                        </Typography>
-                    </div>
-                </Card>
-                <Card sx={{ width: '100%', borderRadius: 8, backgroundColor: isBottonAvail ? "" : "#CBCED2", px: 2.5, py: 1, mx: 5 }} raised>
-                    <div onClick={() => { play("https://api.truthordarebot.xyz/api/dare?rating=r") }}>
-                        <Typography gutterBottom sx={{
-                            p: 1,
-                            fontSize: '28px',
-                            fontWeight: '500',
-                            textAlign: 'center'
-                        }}>{'Dare'}
-                        </Typography>
-                    </div>
-                </Card>
-            </Box>
-            {isLoading && (
-                <Hourglass
-                    visible={isLoading}
-                    height="50"
-                    width="50"
-                    ariaLabel="hourglass-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    colors={['#306cce', '#72a1ed']}
-                />
-            )}
-            {gameText && (
-                <Box px={2} pt={3}>
-                    <Typography gutterBottom sx={{
-                        color: COLORS.pruebas,
-                        fontSize: '26px',
-                        fontWeight: '600',
-                        pt: 0,
-                        textAlign: 'center',
-                    }}>
-                        {gameText}
-                    </Typography>
-                    <Typography gutterBottom sx={{
-                        color: COLORS.neutral500,
-                        fontSize: '22px',
-                        fontWeight: '600',
-                        textAlign: 'center',
-                        pt: 4,
-                    }}>{"If you answer or complete the dare, give 4 sips if not you drink."}</Typography>
+            {isBottonAvail && (
+                <Box display={'flex'} flexDirection={'row'}>
+                    <Card sx={{ width: '100%', borderRadius: 8, backgroundColor: COLORS.black, mx: 5, pt: 1, border: '2px solid white', }} raised>
+                        <div onClick={() => { play("https://api.truthordarebot.xyz/api/truth?rating=r") }} >
+                            <Typography gutterBottom sx={{
+                                color: COLORS.allTexts,
+                                fontSize: '28px',
+                                fontWeight: '500',
+                                textAlign: 'center'
+                            }}>{'Truth'}
+                            </Typography>
+                        </div>
+                    </Card>
+                    <Card sx={{ width: '100%', borderRadius: 8, backgroundColor: COLORS.black, mx: 5, pt: 1, border: '2px solid white' }} raised>
+                        <div onClick={() => { play("https://api.truthordarebot.xyz/api/dare?rating=r") }}>
+                            <Typography gutterBottom sx={{
+                                color: COLORS.allTexts,
+                                fontSize: '28px',
+                                fontWeight: '500',
+                                textAlign: 'center'
+                            }}>{'Dare'}
+                            </Typography>
+                        </div>
+                    </Card>
                 </Box>
             )}
 
+            <Box height={'40%'} display="flex" alignItems={'center'} justifyContent={'center'} sx={{ overflowY: 'auto' }}>
+                {isLoading && (
+                    <Hourglass
+                        visible={isLoading}
+                        height="50"
+                        width="50"
+                        ariaLabel="hourglass-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        colors={['#306cce', '#72a1ed']}
+                    />
+                )}
+                {gameText && (
+                    <Box px={2} pt={3}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.allTexts,
+                            fontSize: '32px',
+                            fontWeight: '450',
+                            pt: 0,
+                            textAlign: 'center',
+                        }}>
+                            {gameText}
+                        </Typography>
+                    </Box>
+                )}
+            </Box>
+
+            <Box height={'20%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                {gameText && (
+                    <Box px={2} pt={3}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.almostWhite,
+                            fontSize: '22px',
+                            fontWeight: '400',
+                            textAlign: 'center',
+                            pt: 4,
+                        }}>{`If you answer or complete the dare, everyone drinks 4 sips if not you drink.`}</Typography>
+
+                    </Box>
+                )}
+            </Box>
+
             {!isBottonAvail && (
-                <Box pt={2} >
-                    <Button variant="contained" onClick={changePLayer}>Next player<SkipNextIcon /></Button>
+                <Box height={'20%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                    <Box pt={2} >
+                        <Button variant="contained" sx={{ color: '#000000', backgroundColor: '#FFFFFF', height: '45px', width: '180px' }} onClick={changePLayer}>Next player<SkipNextIcon /></Button>
+                    </Box>
                 </Box>
             )}
 

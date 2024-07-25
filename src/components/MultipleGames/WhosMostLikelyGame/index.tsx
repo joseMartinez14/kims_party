@@ -1,11 +1,6 @@
 import { Box, Typography, Button, Paper, MenuItem, Card } from '@mui/material';
 import { COLORS } from '../../../utils/Colors';
-import { titles } from '../../../utils/DataGeneral';
-import { TEXTS } from '../../../utils/Texts';
-import SportsBarIcon from '@mui/icons-material/SportsBar';
-import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -45,8 +40,6 @@ const WhosMostLikelyGame = (props: TruthOrDareGameProps) => {
         play("https://api.truthordarebot.xyz/api/paranoia?rating=r");
 
     }
-
-    const storage_key = "QUE_PARIO_MAMA_JUGADORES"
 
     const fetchDares = async (url: string): Promise<string> => {
 
@@ -94,62 +87,73 @@ const WhosMostLikelyGame = (props: TruthOrDareGameProps) => {
     }
 
     useEffect(() => {
-        console.log("en use effect");
         play("https://api.truthordarebot.xyz/api/paranoia?rating=r");
     }, []);
 
     return (
-        <Box display="flex"
-            alignItems={'center'} justifyContent={'center'} flexDirection={'column'}
+        <Box
+            height={'90vh'}
         >
-            <Box px={4} >
+            <Box height={'15%'} display="flex" alignItems={'center'} justifyContent={'center'}>
                 <Typography gutterBottom sx={{
-                    color: COLORS.homeSubtitle,
-                    fontSize: '35px',
-                    fontWeight: '600',
-                    pt: 6,
+                    color: COLORS.allTexts,
+                    fontSize: '30px',
+                    fontWeight: '350',
                     textAlign: 'center'
                 }}>{players[playerIndex]}
                 </Typography>
             </Box>
 
-            {isLoading && (
-                <Hourglass
-                    visible={isLoading}
-                    height="50"
-                    width="50"
-                    ariaLabel="hourglass-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    colors={['#306cce', '#72a1ed']}
-                />
-            )}
-            {gameText && (
-                <Box px={2} pt={3}>
-                    <Typography gutterBottom sx={{
-                        color: COLORS.pruebas,
-                        fontSize: '26px',
-                        fontWeight: '600',
-                        pt: 0,
-                        textAlign: 'center',
-                    }}>
-                        {gameText}
-                    </Typography>
-                    <Typography gutterBottom sx={{
-                        color: COLORS.neutral500,
-                        fontSize: '22px',
-                        fontWeight: '600',
-                        textAlign: 'center',
-                        pt: 4,
-                    }}>{"Choose the most likely and that person has to drink 4 sips."}</Typography>
-                </Box>
-            )}
+            <Box height={'40%'} display="flex" alignItems={'center'} justifyContent={'center'} sx={{ overflowY: 'auto' }}>
+                {isLoading && (
+                    <Hourglass
+                        visible={isLoading}
+                        height="50"
+                        width="50"
+                        ariaLabel="hourglass-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        colors={['#306cce', '#72a1ed']}
+                    />
+                )}
+                {gameText && (
+                    <Box px={2} pt={3}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.allTexts,
+                            fontSize: '32px',
+                            fontWeight: '450',
+                            pt: 0,
+                            textAlign: 'center',
+                        }}>
+                            {gameText}
+                        </Typography>
+                    </Box>
+                )}
 
-            {gameText && (
-                <Box pt={2} >
-                    <Button variant="contained" onClick={changePLayer}>Next player<SkipNextIcon /></Button>
-                </Box>
-            )}
+            </Box>
+
+            <Box height={'20%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                {gameText && (
+                    <Box px={2} pt={3}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.almostWhite,
+                            fontSize: '22px',
+                            fontWeight: '400',
+                            textAlign: 'center',
+                            pt: 4,
+                        }}>{"Choose the most likely and that person has to drink 4 sips."}</Typography>
+                    </Box>
+                )}
+
+            </Box>
+
+            <Box height={'20%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                {gameText && (
+                    <Box pt={2} >
+                        <Button variant="contained" sx={{ color: '#000000', backgroundColor: '#FFFFFF', height: '45px', width: '180px' }} onClick={changePLayer}>Next player<SkipNextIcon /></Button>
+                    </Box>
+                )}
+            </Box>
 
         </Box >
     )

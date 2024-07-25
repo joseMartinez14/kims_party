@@ -35,40 +35,54 @@ const Players = (props: PlayersProps) => {
     };
 
     return (
-        <div>
-            <Typography gutterBottom sx={{
-                color: COLORS.darkblue,
-                fontSize: '25px',
-                fontWeight: '300',
-                pt: 3,
-            }}>Players:</Typography>
-            <List>
-                {players?.map((player, index) => (
-                    <ListItem key={index}>
-                        <ListItemText primary={player} />
-                        <ListItemSecondaryAction>
-                            <IconButton edge="end" aria-label="delete" onClick={() => deleteTodo(index)}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemSecondaryAction>
-                    </ListItem>
-                ))}
-            </List>
-            <TextField
-                label="Insert the player name"
-                variant="standard"
-                value={newTodo}
-                onChange={(e) => setNewTodo(e.target.value)}
-                sx={{
-                    width: '100%'
-                }}
-            />
-            <Box pt={1} width={'100%'}>
-                <Button variant="outlined" color="primary" onClick={addTodo} sx={{ pt: '10px' }}>
-                    Add player
-                </Button>
+        <Box height={"100%"}>
+            <Box height={"15%"}>
+                <Typography gutterBottom sx={{
+                    color: COLORS.allTexts,
+                    fontSize: '25px',
+                    fontWeight: '300',
+                    alignItems: 'center'
+                }}>Players:</Typography>
             </Box>
-        </div>
+
+            <Box height={"65%"} sx={{ overflowY: 'auto' }}>
+                <List>
+                    {players?.map((player, index) => (
+                        <ListItem key={index}>
+                            <ListItemText primary={player} sx={{ color: "white" }} />
+                            <ListItemSecondaryAction>
+                                <IconButton edge="end" aria-label="delete" onClick={() => deleteTodo(index)}>
+                                    <DeleteIcon sx={{ color: "white" }} />
+                                </IconButton>
+                            </ListItemSecondaryAction>
+                        </ListItem>
+                    ))}
+                </List>
+            </Box>
+            <Box height={"20%"} display={'flex'} flexDirection={'row'} px={1}>
+                <Box width={"60%"} display="flex" alignItems={'center'} justifyContent={'center'}>
+                    <input
+                        type="text"
+                        placeholder='Insert player name'
+                        onChange={(e) => setNewTodo(e.target.value)}
+                        value={newTodo}
+                        style={{
+                            width: '100%',
+                            height: '80%',
+                            border: '1px solid white',
+                            color: 'white',
+                            paddingLeft: 8,
+                            backgroundColor: 'transparent', // Optional: for transparency
+                        }}
+                    />
+                </Box>
+                <Box width={"40%"} display="flex" alignItems={'center'} justifyContent={'center'}>
+                    <Button variant="outlined" onClick={addTodo} sx={{ height: '80%', color: COLORS.allTexts, borderColor: COLORS.allTexts }}>
+                        Add player
+                    </Button>
+                </Box>
+            </Box>
+        </Box>
     );
 }
 

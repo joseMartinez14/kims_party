@@ -15,22 +15,23 @@ import { useState, useEffect, useMemo } from 'react';
 import Players from '../../GeneralGame/Players';
 import { Hourglass } from 'react-loader-spinner';
 
-/*
-1) 
-2) Cuando se activa alguno de ellos entonces tengo que esconder los botones, poner el loading y mandar el request
-3) Cuando es un turno diferente. Poner en null la pregunta y poner en true los botones
+interface WhatYouRatterGameProps {
+    players: string[];
+    getRandomPlayer: (excludedString: string) => string;
+}
 
-*/
+const WhatYouRatterGame = (props: WhatYouRatterGameProps) => {
 
-
-
-const WhatYouRatterGame = () => {
-
+    const { players, getRandomPlayer } = props;
     const [playerIndex, setPlayerIndex] = useState<number>(0);
     const [isLoading, setisLoading] = useState<boolean>(false);
     const [gameText, setgameText] = useState<string | null>(null);
 
     const changeRound = async () => {
+        setPlayerIndex((playerIndex + 1))
+        if ((playerIndex + 1) >= players.length) {
+            setPlayerIndex(0)
+        }
         setgameText(null);
         play("https://api.truthordarebot.xyz/api/wyr?rating=r");
     }
@@ -42,8 +43,6 @@ const WhatYouRatterGame = () => {
         try {
             //const result = await axios.get("https://api.truthordarebot.xyz/api/dare?rating=r");
             const result = await axios.get(url);
-            console.log("Terminoo");
-            console.log(result)
 
             if (result.data.question) {
                 console.log("**** ", result.data.question);
@@ -87,57 +86,67 @@ const WhatYouRatterGame = () => {
     }, []);
 
     return (
-        <Box display="flex"
-            alignItems={'center'} justifyContent={'center'} flexDirection={'column'}
+        <Box
+            height={'90vh'}
         >
-            <Box px={4} >
+            <Box height={'15%'} display="flex" alignItems={'center'} justifyContent={'center'}>
                 <Typography gutterBottom sx={{
-                    color: COLORS.homeSubtitle,
-                    fontSize: '35px',
-                    fontWeight: '600',
-                    pt: 6,
+                    color: COLORS.allTexts,
+                    fontSize: '30px',
+                    fontWeight: '350',
                     textAlign: 'center'
-                }}>{"Everyone"}
+                }}>{players[playerIndex]}
                 </Typography>
             </Box>
 
-            {isLoading && (
-                <Hourglass
-                    visible={isLoading}
-                    height="50"
-                    width="50"
-                    ariaLabel="hourglass-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    colors={['#306cce', '#72a1ed']}
-                />
-            )}
-            {gameText && (
-                <Box px={2} pt={3}>
-                    <Typography gutterBottom sx={{
-                        color: COLORS.pruebas,
-                        fontSize: '26px',
-                        fontWeight: '600',
-                        pt: 0,
-                        textAlign: 'center',
-                    }}>
-                        {gameText}
-                    </Typography>
-                    <Typography gutterBottom sx={{
-                        color: COLORS.neutral500,
-                        fontSize: '22px',
-                        fontWeight: '600',
-                        textAlign: 'center',
-                        pt: 4,
-                    }}>{"Everyone choose. The biggest group has to drink 4 sips each. If everyone chooses the same one then all have to drink 1 shot."}</Typography>
-                </Box>
-            )}
+            <Box height={'40%'} display="flex" alignItems={'center'} justifyContent={'center'} sx={{ overflowY: 'auto' }}>
+                {isLoading && (
+                    <Hourglass
+                        visible={isLoading}
+                        height="50"
+                        width="50"
+                        ariaLabel="hourglass-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        colors={['#306cce', '#72a1ed']}
+                    />
+                )}
+                {gameText && (
+                    <Box px={2} pt={3}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.allTexts,
+                            fontSize: '32px',
+                            fontWeight: '450',
+                            pt: 0,
+                            textAlign: 'center',
+                        }}>
+                            {gameText}
+                        </Typography>
+                    </Box>
+                )}
+            </Box>
 
-            {gameText && (
-                <Box pt={3} >
-                    <Button variant="contained" onClick={changeRound}>Next round<SkipNextIcon /></Button>
-                </Box>
-            )}
+            <Box height={'20%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                {gameText && (
+                    <Box px={2} pt={3}>
+                        <Typography gutterBottom sx={{
+                            color: COLORS.almostWhite,
+                            fontSize: '22px',
+                            fontWeight: '400',
+                            textAlign: 'center',
+                            pt: 4,
+                        }}>{`If ${getRandomPlayer(players[playerIndex])} agrees then everyone must drink 5 sips. If not you drink them.`}</Typography>
+                    </Box>
+                )}
+            </Box>
+
+            <Box height={'20%'} display="flex" alignItems={'center'} justifyContent={'center'}>
+                {gameText && (
+                    <Box pt={2} >
+                        <Button variant="contained" sx={{ color: '#000000', backgroundColor: '#FFFFFF', height: '45px', width: '180px' }} onClick={changeRound}>Next player<SkipNextIcon /></Button>
+                    </Box>
+                )}
+            </Box>
 
         </Box >
     )

@@ -15,9 +15,9 @@ const GameCard = (props: GameCardProps) => {
     const { gameName } = props;
 
     return (
-        <Card sx={{ width: '100%', borderRadius: 8, backgroundColor: "#F1F9FF", py: 1 }} raised>
+        <Card sx={{ width: '100%', borderRadius: 8, backgroundColor: "transparent", border: '3px solid white', py: 1 }} raised>
             <Typography gutterBottom sx={{
-                color: '#B52606',
+                color: '#FFFFFF',
                 fontSize: '28px',
                 fontWeight: '500',
                 textAlign: 'center'
